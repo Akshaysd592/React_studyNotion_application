@@ -10,16 +10,16 @@ const Template = ({title, desc1, desc2, image, formtype, setIsLoggedIn}) => {
     // console.log("ye rha mera form type");
     // console.log(formtype)
   return (
-    <div className='flex justify-between w-11/12 max-w-[1160px] py-12 mx-auto gap-x-12 gap-y-0'>
+    <div className='flex  md:flex-row  bg-richblack-900 justify-between w-full px-8  max-w-[1160px]  mx-auto gap-x-12 py-6 smallsize '>
 
-        <div className='w-11/12 max-w-[450px]' >
+        <div className='w-11/12 max-w-[450px] ' >
             <h1
-            className='text-richblack-5 font-semibold text-[1.875rem] leading-[2.375rem]' 
+            className='text-richblack-5 font-semibold text-[1.875rem] leading-[2.375rem] titlesize' 
             >
                 {title}
             </h1>
 
-            <p className='text-[1.125rem] leading[1.625rem] mt-4' >
+            <p className='text-[1.125rem] leading[1.625rem] mt-4 titlesize ' >
                 <span className='text-richblack-100'>{desc1}</span>
                 <br/>
                 <span className='text-blue-100 italic'>{desc2}</span>
@@ -45,19 +45,20 @@ const Template = ({title, desc1, desc2, image, formtype, setIsLoggedIn}) => {
 
         </div>
 
-        <div className='relative w-11/12 max-w-[450px] '>
+        <div className='relative w-11/12 max-w-[450px] imagesize hidden sm:block  '>
             <img src={frameImage}
+                className='py-4'
                 alt="Pattern"
-                width={558}
-                height={504}
+                width={508}
+                height={404}
                 loading="lazy"/>
 
             <img src={image}
                 alt="Students"
-                width={558}
-                height={490}
+                width={508}
+                height={404}
                 loading="lazy"
-                className='absolute -top-4 right-4'
+                className='absolute -top-3 right-3'
                 />    
         </div>
 

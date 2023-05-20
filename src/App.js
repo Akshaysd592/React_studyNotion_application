@@ -15,7 +15,8 @@ function App() {
  
 
   return (
-    <div className="w-screen h-screen bg-richblack-900 flex flex-col">
+   
+    <div className=" w-full py-2  bg-richblack-900 flex flex-col">
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
 
       <Routes>
@@ -33,6 +34,7 @@ function App() {
       </Routes>
 
     </div>
+ 
     )
 }
 

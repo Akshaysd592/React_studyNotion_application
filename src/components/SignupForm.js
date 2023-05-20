@@ -3,7 +3,6 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import {toast} from "react-hot-toast"
 import { useNavigate } from 'react-router-dom';
 
-
 const SignupForm = ({setIsLoggedIn}) => {
     const navigate = useNavigate();
 
@@ -60,13 +59,13 @@ const SignupForm = ({setIsLoggedIn}) => {
     <div>
         {/* student-Instructor tab */}
         <div
-        className='flex bg-richblack-800 p-1 gap-x-1 my-6 rounded-full max-w-max'>
+        className='flex flex-col sm:flex-row bg-richblack-800   p-1 gap-x-1 my-6 rounded-lg max-w-max smallsize '>
 
             <button
             className={`${accountType === "student" 
             ?
               "bg-richblack-900 text-richblack-5"
-            :"bg-transparent text-richblack-200"} py-2 px-5 rounded-full transition-all duration-200`}
+            :"bg-transparent text-richblack-200"} py-2 px-5 rounded-lg sm:rounded-full transition-all duration-200`}
             onClick={()=> setAccountType("student")}>
                 Student
             </button>
@@ -75,7 +74,7 @@ const SignupForm = ({setIsLoggedIn}) => {
             className={`${accountType === "instructor" 
             ?
               "bg-richblack-900 text-richblack-5"
-            :"bg-transparent text-richblack-200"} py-2 px-5 rounded-full transition-all duration-200`}
+            :"bg-transparent text-richblack-200"} py-2 px-5 rounded-lg sm:rounded-full transition-all duration-200`}
             onClick={() => setAccountType("instructor")}>
                 Instructor
             </button>
@@ -93,7 +92,7 @@ const SignupForm = ({setIsLoggedIn}) => {
                             onChange={changeHandler}
                             placeholder="Enter First Name"
                             value={formData.firstName}
-                            className='bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]'
+                            className='bg-richblack-800 text-[10px] sm:text-sm  rounded-[0.5rem] text-richblack-5 w-full p-[12px]'
                         />
                     </label>
 
@@ -106,7 +105,7 @@ const SignupForm = ({setIsLoggedIn}) => {
                             onChange={changeHandler}
                             placeholder="Enter Last Name"
                             value={formData.lastName}
-                            className='bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]'
+                            className='bg-richblack-800  text-[10px] sm:text-sm rounded-[0.5rem] text-richblack-5 w-full p-[12px]'
                         />
                     </label>
             </div>
@@ -121,14 +120,14 @@ const SignupForm = ({setIsLoggedIn}) => {
                         onChange={changeHandler}
                         placeholder="Enter Email Address "
                         value={formData.email}
-                        className='bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]'
+                        className='bg-richblack-800  rounded-[0.5rem] text-richblack-5 w-full p-[12px]'
                     />
             </label>
             </div>
             
 
             {/* createPassword and Confirm Password */}
-            <div className='w-full flex gap-x-4 mt-[20px]'>
+            <div className='w-full flex flex-col  gap-y-4  gap-x-4 mt-[20px]'>
                 <label className='w-full relative'>
                     <p className='text-[0.875rem] text-richblack-5 mb-1 leading-[1.375rem]'>Create Password<sup className='text-pink-200'>*</sup></p>
                     <input
@@ -141,11 +140,11 @@ const SignupForm = ({setIsLoggedIn}) => {
                         className='bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]'
                     />
                     <span
-                     className='absolute right-3 top-[38px] cursor-pointer' 
+                     className='absolute mx-2 sm:right-3 top-[38px] cursor-pointer' 
                     onClick={() => setShowPassword((prev) => !prev)}>
                         {showPassword ? 
 
-                        (<AiOutlineEyeInvisible fontSize={24} fill='#AFB2BF'/>) : 
+                        (<AiOutlineEyeInvisible fontSize={24}  fill='#AFB2BF'/>) : 
 
                         (<AiOutlineEye fontSize={24} fill='#AFB2BF'/>)}
                     </span>
@@ -163,10 +162,10 @@ const SignupForm = ({setIsLoggedIn}) => {
                         className='bg-richblack-800 rounded-[0.5rem] text-richblack-5 w-full p-[12px]'
                     />
                     <span 
-                     className='absolute right-3 top-[38px] cursor-pointer'
+                     className='absolute mx-2 sm:right-3 top-[38px] cursor-pointer'
                     onClick={() => setShowConfirmPassword((prev) => !prev)}>
                         {showConfirmPassword ?
-
+                      
                          (<AiOutlineEyeInvisible fontSize={24} fill='#AFB2BF'/>) : 
 
                          (<AiOutlineEye fontSize={24} fill='#AFB2BF'/>)}
